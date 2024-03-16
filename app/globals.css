@@ -90,6 +90,7 @@ body {
   margin: 0;
   color: rgb(var(--foreground-rgb));
   background: black;
+  font-family: 'Kaisei Tokumin', serif;
   /* background: linear-gradient(
       to bottom,
       transparent,

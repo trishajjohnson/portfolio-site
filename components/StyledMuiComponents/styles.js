@@ -6,17 +6,19 @@ export const Container = styled(Box)({
     alignItems: 'flex-start',
     alignContent: 'flex-end',
     flexWrap: 'wrap',
-    marginTop: '30px',
+    // marginTop: '30px',
     display: 'flex',
     justifyContent: 'center',
     // padding: '30px 0 26px',
     // gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
     gap: '25px',
     borderRadius: '10px',
+    zIndex: 99
 });
 
 export const Wrapper = styled(Box)({
     display: 'flex',
+    position: 'relative',
     // flexGrow: 1,
     border: '3px solid rgba(249, 249, 249, 0.1)',
     backgroundColor: 'rgba(249, 249, 249, 0.1)',

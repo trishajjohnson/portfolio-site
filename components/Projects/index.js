@@ -1,18 +1,18 @@
 "use client";
 
-import { Box } from "@mui/material";
-import { ProjectData } from "./ProjectData";
 import { Container, Wrapper } from "../StyledMuiComponents/styles";
 import ProjectContent from "./ProjectContent";
+import ProjectModal from "./ProjectModal";
+import { useState } from "react";
 
 
-function Projects() {
-    
+function Projects({handleClick, projects}) {
+
     return (
         <Container>
-            {ProjectData.map((item) => (
+            {projects.map((item, idx) => (
                 
-                <Wrapper key={item.id}>
+                <Wrapper id={idx} onClick={() => handleClick(idx)} key={idx}>
                     <ProjectContent project={item} />
                 </Wrapper>                
                
