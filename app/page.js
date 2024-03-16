@@ -1,16 +1,14 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Navbar from "../components/Navbar";
 import ResumeBanner from "../components/ResumeBanner";
 import Projects from "../components/Projects";
 import styles from "./page.module.css";
-import { Atomic_Age, Kaisei_Tokumin } from 'next/font/google';
+import { Kaisei_Tokumin } from 'next/font/google';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
-import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
-import DownloadIcon from '@mui/icons-material/Download';
 import ContactForm2 from "../components/ContactForm2";
 import ProjectModal from "../components/Projects/ProjectModal";
 import { useState, useEffect } from "react";
@@ -94,7 +92,7 @@ export default function Home() {
           <Box id="home" className="section" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: 25, height: '60vh' }}>       
             <h1 style={{fontSize: 60, fontWeight: '400', letterSpacing: '2px' }}>Trisha Johnson</h1>
             <Box sx={{ display: 'flex', margin: 5 }}>
-              <Image src="/tahoeBNW.JPG" width="200" height="200" style={{ borderRadius: "50%" }} />
+              <Image alt="headshot" src="/tahoeBNW.JPG" width="200" height="200" style={{ borderRadius: "50%" }} />
               <Box sx={{ display: 'flex', margin: '20px', flexDirection: 'column', alignItems: 'center' }}>
                 <p style={{fontSize: '16px', fontWeight: "100"}}>
                   I am a Fullstack Software Engineer with a love for the frontend. 
@@ -152,7 +150,7 @@ export default function Home() {
 
             <Box id="work-1" className={styles.hidden} sx={{ display: 'flex', flexDirection: 'column', marginBottom: 5 }}>
               <Box sx={{ display: 'flex' }}>
-                <Image src="/hack_for_la_logo.jpeg" width="50" height="50" style={{ borderRadius: "5px", margin: 10 }} />
+                <Image alt="hack-for-la-logo" src="/hack_for_la_logo.jpeg" width="50" height="50" style={{ borderRadius: "5px", margin: 10 }} />
                 <Box sx={{ display:  'flex', flexDirection: 'column' }}>
                   <h2>Software Engineer</h2>
                   <h4>Hack for LA</h4>
@@ -178,7 +176,7 @@ export default function Home() {
 
             <Box id="work-2" className={styles.hidden} sx={{ display: 'flex', flexDirection: 'column', marginBottom: 5 }}>
               <Box sx={{ display: 'flex' }}>
-                <Image src="/logo_tweak copy.png" width="50" height="50" style={{ borderRadius: "5px", margin: 10 }} />
+                <Image alt="eoj-logo" src="/logo_tweak copy.png" width="50" height="50" style={{ borderRadius: "5px", margin: 10 }} />
                 <Box sx={{ display:  'flex', flexDirection: 'column' }}>
                   <h2>Software Engineer</h2>
                   <h4>Energy of Jade</h4>
@@ -204,7 +202,7 @@ export default function Home() {
 
             <Box id="work-3" className={styles.hidden} sx={{ display: 'flex', flexDirection: 'column', marginBottom: 5 }}>
               <Box sx={{ display: 'flex' }}>
-                <Image src="/heather-website-logo-1 copy.png" width="50" height="50" style={{ borderRadius: "5px", backgroundColor: 'white', margin: 10 }} />
+                <Image alt="hg-coaching-logo" src="/heather-website-logo-1 copy.png" width="50" height="50" style={{ borderRadius: "5px", backgroundColor: 'white', margin: 10 }} />
                 <Box sx={{ display:  'flex', flexDirection: 'column' }}>
                   <h2>Wordpress Developer</h2>
                   <h4>Heather Gloria Coaching</h4>
@@ -236,7 +234,7 @@ export default function Home() {
 
             <Box id="work-4" className={styles.hidden} sx={{ display: 'flex', flexDirection: 'column', marginBottom: 5 }}>
               <Box sx={{ display: 'flex' }}>
-                <Image src="/springboard_logo.jpeg" width="50" height="50" style={{ borderRadius: "5px", backgroundColor: 'white', margin: 10 }} />
+                <Image alt="springboard-logo" src="/springboard_logo.jpeg" width="50" height="50" style={{ borderRadius: "5px", backgroundColor: 'white', margin: 10 }} />
                 <Box sx={{ display:  'flex', flexDirection: 'column' }}>
                   <h2>Software Engineer Fellow</h2>
                   <h4>Springboard</h4>
