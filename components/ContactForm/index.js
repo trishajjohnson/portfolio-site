@@ -105,13 +105,13 @@ function ContactForm() {
             {isSubmitted ? (
                 <MessageContainer>
                     <h1>Message Sent!</h1>
-                    <Paragraph>Thanks for reaching out, {formData.name}!  We'll get back to you as soon as possible.</Paragraph>
+                    <Paragraph>Thanks for reaching out, {formData.name}!  We&apos;ll get back to you as soon as possible.</Paragraph>
                 </MessageContainer>
             ) : (
                 <div>
                     <FormHeaderContainer>
                         <FormHeader>Have a question?</FormHeader>
-                        <Paragraph>Let's connect!</Paragraph>
+                        <Paragraph>Let&apos;s connect!</Paragraph>
                     </FormHeaderContainer>
                     <FormStyled onSubmit={handleSubmit}>
                         <Grid container justifyContent="center" direction="column">

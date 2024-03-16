@@ -100,13 +100,13 @@ function ContactForm2() {
             {isSubmitted ? (
                 <MessageContainer>
                     <h1>Message Sent!</h1>
-                    <Paragraph>Thanks for reaching out!  I'll get back to you as soon as possible.</Paragraph>
+                    <Paragraph>Thanks for reaching out!  I&apos;ll get back to you as soon as possible.</Paragraph>
                 </MessageContainer>
             ) : (
                 <Box>
                     <FormHeaderContainer>
                         <FormHeader>Have a question?</FormHeader>
-                        <Paragraph>Let's connect!</Paragraph>
+                        <Paragraph>Let&apos;s connect!</Paragraph>
                     </FormHeaderContainer>
                     <FormStyled ref={form} onSubmit={sendEmail}>
                         <Grid container justifyContent="center" direction="column">

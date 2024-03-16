@@ -124,11 +124,11 @@ export default function Home() {
             
             <p id="about-1" className={styles.hidden} style={{fontSize: '14px'}}>
               I used to joke and say my Sociology degree was useless.  The thing was, its purpose 
-              was difficult for me to define.  It wasn’t a hard skill like fixing a car or building a house.  The truth is, I’ve 
+              was difficult for me to define.  It wasn&apos;t a hard skill like fixing a car or building a house.  The truth is, I&apos;ve 
               used it every single day since. The majority of my work experience has been in the service industry, 5 years of which 
               were spent making and serving coffee to the public, and that experience has taught me a very valuable lesson.  Sometimes, I was the 
               first human interaction a customer had in their day and I realized what a powerful position that was to be in.  I had 
-              the ability to influence the trajectory of someone’s day, simply by greeting them with a warm smile and a killer cup of joe!
+              the ability to influence the trajectory of someone&apos;s day, simply by greeting them with a warm smile and a killer cup of joe!
             </p>
             <p id="about-2" className={styles.hidden}>
               Studying social constructs and human behavior has helped me navigate countless difficult situations in my life, personally and 
@@ -139,10 +139,10 @@ export default function Home() {
               the two requires adaptability, and that, in my opinion, is the key to success. 
             </p>
             <p id="about-3" className={styles.hidden}>
-              When I'm not developing creative solutions to everyday problems, you'll usually find me snuggled up on the couch with my dog Lou, watching
+              When I&apos;m not developing creative solutions to everyday problems, you&apos;ll usually find me snuggled up on the couch with my dog Lou, watching
               something entertaining.  I also love to write and perform music, portrait photography and traveling to new places, and I just started learning to sew.
-              If you’re interested in connecting and hearing more about my interests and aspirations, or if you’re curious what it takes to pull the 
-              perfect espresso shot, shoot me an email.  I’d love to connect!
+              If you&apos;re interested in connecting and hearing more about my interests and aspirations, or if you&apos;re curious what it takes to pull the 
+              perfect espresso shot, shoot me an email.  I&apos;d love to connect!
             </p>
             
           </Box>
@@ -159,7 +159,7 @@ export default function Home() {
               <p style={{ margin: 10 }}>
                 In this role, I worked with nonprofit, government, and private partners to build civic-minded 
                 projects serving the greater LA area. I also collaborated with an internal team to build and service the 
-                organization’s website and collaborated with program managers, designers, and developers to discover new 
+                organization&apos;s website and collaborated with program managers, designers, and developers to discover new 
                 solutions for existing issues, often working with Kanban (project management framework) and JavaScript.
               </p>
               <ul style={{ margin: 25 }}>
@@ -218,7 +218,7 @@ export default function Home() {
                 <li>
                   Quick pivoted amid a change in designers to swiftly understand client needs, wants, and overall goals. 
                   Conducted meetings with the client to develop and deliver an ideal product, resulting in increased visibility 
-                  of the client’s business and services.
+                  of the client&apos;s business and services.
                 </li>
                 <li>
                   Valued and embraced collaboration to record and transfer client notes to design strategies and devise an 
