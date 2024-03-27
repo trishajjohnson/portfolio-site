@@ -6,8 +6,8 @@ export default function ResumeButton() {
 
     function handleDownload() {
         const aTag = document.createElement("a");
-        aTag.href = "https://github.com/trishajjohnson/portfolio-site/blob/main/public/Trisha%20Johnson_WORD_FINAL%20copy.pdf";
-        aTag.setAttribute("download", "Trisha Johnson_WORD_FINAL copy.pdf");
+        aTag.href = "https://drive.google.com/file/d/1mHuJNVQ4zN6g8bb84I5S85lfsbqofYoY/view?usp=sharing";
+        aTag.setAttribute("download", "Trisha Johnson_Resume.pdf");
         document.body.appendChild(aTag);
         aTag.click();
         aTag.remove();
