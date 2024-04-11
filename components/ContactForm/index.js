@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Script from 'next/script';
-import { Grid, Button, Container } from "@mui/material";
+import { Box, Grid, Button, Container } from "@mui/material";
 import { InputBase } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 
 const ButtonContainer = styled('div')({
     width: 25,
@@ -13,13 +16,13 @@ const ButtonContainer = styled('div')({
 });
 
 const ButtonStyled = styled(Button)({
-    border: '.5px solid black',
+    border: '.5px solid white',
     borderRadius: 3,
-    color: 'black',
+    color: 'white',
     '&:hover': {
         backgroundColor: 'black',
         color: 'white',
-        border: 'none'
+        border: '1px solid white'
     }
 });
 
@@ -30,7 +33,8 @@ const InputBaseStyled = styled(InputBase)({
 });
 
 const StyledInput = styled(InputBaseStyled)({
-    border: '.5px solid black',
+    border: '.5px solid white',
+    color: 'white',
     borderRadius: 3,
     paddingLeft: 5,
     lineHeight: 2,
@@ -65,78 +69,55 @@ const FormHeaderContainer = styled('div')({
 });
 
 
-function ContactForm() {
+export default function ContactForm() {
+    const form = useRef();
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-
-    function handleChange(evt) {
-        const { name, value } = evt.target;
-        setFormData({
-            ...formData,
-            [name]: value,
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
         });
-    }
 
-    async function handleSubmit(evt) {
-        evt.preventDefault();
-        console.log("submitted!");
-        // call the email API to send message info
-        try {
-            const response = await axios.post(`${BASE_URL}/api/sendMail`, formData);
-            console.log("response", response);
-            setFormData({
-                name: formData.name,
-                email: "",
-                message: "",
-            });
-            setIsSubmitted(true);
-        } catch(error) {
-            console.log("error", error);
-        }
-    }
-
+        setIsSubmitted(true);
+    };
 
     return (
-        <Container>
+        <Box id="contact" className="section " sx={{ marginBottom: 10 }}>
+            
             {isSubmitted ? (
                 <MessageContainer>
                     <h1>Message Sent!</h1>
-                    <Paragraph>Thanks for reaching out, {formData.name}!  We&apos;ll get back to you as soon as possible.</Paragraph>
+                    <Paragraph>Thanks for reaching out!  I&apos;ll get back to you as soon as possible.</Paragraph>
                 </MessageContainer>
             ) : (
-                <div>
+                <Box>
                     <FormHeaderContainer>
                         <FormHeader>Have a question?</FormHeader>
                         <Paragraph>Let&apos;s connect!</Paragraph>
                     </FormHeaderContainer>
-                    <FormStyled onSubmit={handleSubmit}>
+                    <FormStyled ref={form} onSubmit={sendEmail}>
                         <Grid container justifyContent="center" direction="column">
                             <Grid item>
                                 <StyledInput  
                                     id="name-input"
-                                    name="name"
+                                    name="user_name"
                                     placeholder="Name"
                                     type="text"
-                                    value={formData.name}
                                     fullWidth
                                     size="small"
-                                    onChange={handleChange}
                                 />
                             </Grid>
                             <Grid item>
                                 <StyledInput  
                                     id="email-input"
-                                    name="email"
+                                    name="user_email"
                                     placeholder="Email"
                                     type="email"
-                                    value={formData.email} 
                                     fullWidth 
                                     size="small"
-                                    onChange={handleChange}
                                 />
                             </Grid>
                             <Grid item>
@@ -146,12 +127,10 @@ function ContactForm() {
                                     placeholder="Message"
                                     type="text"
                                     variant="outlined"
-                                    value={formData.message}
                                     fullWidth 
                                     multiline
                                     rows={5}
                                     size="small"
-                                    onChange={handleChange}
                                 />
                             </Grid>
                             <ButtonContainer>
@@ -161,12 +140,9 @@ function ContactForm() {
                             </ButtonContainer>
                         </Grid>
                     </FormStyled>
-                </div>
+                    <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
+                </Box>
             )}
-            <Script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
-        </Container>
+        </Box>
     );
 }
-
-
-export default ContactForm;

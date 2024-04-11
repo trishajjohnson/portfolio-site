@@ -4,16 +4,18 @@ import ResumeButton from "./ResumeButton";
 export default function ResumeBanner() {
 
     return (
+
         <Box sx={{
             backgroundColor: 'black',
-            width: '75vw',
+            width: '100vw',
             position: 'fixed',
             textAlign: 'right',
             top: 0,
             right: 0,
-            zIndex: 1
+            zIndex: 2
           }}>
             <ResumeButton />
         </Box>
+        
     );
 }
