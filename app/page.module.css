@@ -1,6 +1,15 @@
+.visible {
+  opacity: 1;
+  transition: opacity 1s;
+  margin-bottom: 15px;
+}
 
 .hidden {
   opacity: 0;
+}
+.unscrollable {
+  height: calc(100vh-100px);
+  overflow: hidden;
 }
 
 .fadeIn {

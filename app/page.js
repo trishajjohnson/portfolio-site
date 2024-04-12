@@ -20,7 +20,7 @@ import { ProjectData } from "../components/Sections/ProjectsSection/ProjectData"
 import { Box } from "@mui/material";
 
 // Style imports
-import styles from "./page.module.css";
+import "./page.module.css";
 import { Kaisei_Tokumin } from 'next/font/google';
 
 const kaisei_tokumin = Kaisei_Tokumin({
@@ -34,57 +34,18 @@ const projects = ProjectData.sections.projects.projects;
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [projectIndex, setProjectIndex] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      
-      if (window.scrollY > 300) {
-        let element = document.querySelector("#about-header");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
-      }
-      if (window.scrollY > 400) {
-        let element = document.querySelector("#about-1");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
-      }
-      if (window.scrollY > 500) {
-        let element = document.querySelector("#about-2");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
-      }
-      if (window.scrollY > 600) {
-        let element = document.querySelector("#about-3");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
-      }
-      if (window.scrollY > 1200) {
-        let element = document.querySelector("#work-1");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
-      }
-      if (window.scrollY > 1300) {
-        let element = document.querySelector("#work-2");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
-      }
-      if (window.scrollY > 1500) {
-        let element = document.querySelector("#work-3");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
-      }
-      if (window.scrollY > 2000) {
-        let element = document.querySelector("#work-4");
-        element.style.opacity = 1;
-        element.style.transition = 'opacity 1s';
-        element.style.marginBottom = '15px';
+      const yCoords = [450, 1300, 1500, 3000, 3500];
+
+      for(let i=0; i<yCoords.length; i++) {
+        const y = yCoords[i];
+       
+        if(window.scrollY >= y) {
+          setScrollY(y);  
+        }
       }
     };
 
@@ -113,11 +74,11 @@ export default function Home() {
           <Navbar />
         </Box>
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', width: '75vw', color: 'white', margin: '50px', padding: '50px' }}>  
+        <Box className={`${isOpen && 'unscrollable'}`} sx={{ display: 'flex', flexDirection: 'column', width: '75vw', color: 'white', margin: '50px', padding: '50px' }}>  
           <ResumeBanner />
           <HomeSection /> 
-          <AboutSection />
-          <ExperienceSection />
+          <AboutSection y={scrollY} />
+          <ExperienceSection y={scrollY} />
           <ProjectsSection handleClick={handleClick} />
           <ContactForm />
         </Box>
