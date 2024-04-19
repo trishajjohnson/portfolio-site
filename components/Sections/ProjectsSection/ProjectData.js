@@ -200,7 +200,7 @@ export const ProjectData = {
                         "Mailchimp", 
                         "Adobe Suite"
                     ],
-                    github: 'none',
+                    github: null,
                     url: 'https://heathergloriacoaching.com/'
                 },
                 {

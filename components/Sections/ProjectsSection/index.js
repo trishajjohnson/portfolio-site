@@ -3,28 +3,15 @@
 import ProjectCard from "./ProjectCard";
 import { Box } from "@mui/material";
 import { ProjectData } from "./ProjectData";
-
-const projects = ProjectData.sections.projects;
+import styles from "./ProjectsSection.module.css";
 
 
 export default function ProjectsSection({ handleClick }) {
+    const projects = ProjectData.sections.projects;
+
 
     return (
-        <Box 
-            id={projects.id}
-            className="section"
-            sx={{ 
-                alignContent: 'flex-end', 
-                alignItems: 'flex-start', 
-                borderRadius: '10px',
-                display: 'flex', 
-                flexWrap: 'wrap', 
-                gap: '25px',
-                justifyContent: 'center',
-                marginBottom: 25,
-                zIndex: 1 
-            }}
-        >
+        <Box id={projects.id} className={`section ${styles.projectsContainer}`}>
             {projects.projects.map((item, idx) => (
                 <Box key={idx} onClick={() => handleClick(idx)}>
                     <ProjectCard project={item} />

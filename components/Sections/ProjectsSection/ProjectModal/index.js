@@ -2,55 +2,37 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import { Box, Link } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
+import styles from "./ProjectModal.module.css";
+
 
 function ProjectModal({ project, closeModal }) {
 
     return (
         // Modal container
-        <Box sx={{
-            position: 'fixed',
-            top: '0px',
-            left: '0px',
-            width: '100vw',
-            height: '100vh',
-            zIndex: 10,
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
-            color: "white"
-            }}          
-        >
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end', margin: "75px 75px 0 0" }}>
-                <CloseIcon onClick={closeModal} sx={{ color: 'white', fontSize: '35px', " &:hover": { cursor: "pointer" } }} />
+        <Box className={styles.modalBackDrop}>
+            <Box className={styles.closeIconContainer}>
+                <CloseIcon onClick={closeModal} className={styles.closeIcon} />
             </Box>
 
             {/* Modal */}
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    height: '95vh',
-                    transform: 'translate(-50%, -50%)',
-                    backgroundColor: 'black',
-                    padding: '20px',
-                    border: '1px solid rgba(148, 142, 142, 0.2)'
-                }}
-            >
+            <Box className={styles.outerModalContainer}>
                 
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <Box className={styles.innerModalContainer}>
                     <ReactPlayer 
                         url={project.video} 
                         controls={true}
                         volume={0}
                         height={350}
-                        style={{ marginBottom: '50px' }}
+                        className={styles.player}
                     />
-                    <Box sx={{ overflowY:'scroll', height: 500,  display: 'flex', flexDirection: "column", alignItems: 'center', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: "30px", marginBottom: "10px" }}>{project.name}</h1>
-                        <p style={{ marginBottom: "20px" }}>{ project.description }</p>
+                    <Box className={styles.projectContent}>
+                        <h1 className={styles.header}>{project.name}</h1>
+                        <p className={styles.description}>{ project.description }</p>
                         
-                        <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>Technologies</h3>
-                        <p className='modal' style={{ marginBottom: '10px' }}>{ project.technologies.join(', ') } </p>
-                        <p>Click <Link>here</Link> for source code and <Link>here</Link> to see the live site.</p>
+                        <h3 className={styles.subHeader}>Technologies</h3>
+                        <p className={styles.technologies}>{ project.technologies.join(', ') } </p>
+                        {project.github && <p>Click <Link href={project.github} target="_blank">here</Link> for source code.</p>} 
+                        <p>Click <Link target="_blank" href={project.url}>here</Link> to see the live site.</p>
 
                     </Box>
                 </Box>

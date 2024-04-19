@@ -15,24 +15,15 @@ export default function ResumeButton() {
 
     
     return (
+    
         <Button 
+            color="primary"
             onClick={handleDownload} 
-            sx={{
-                    color: 'white', 
-                    border: '1px solid rgba(255, 255, 255, .7)', 
-                    margin: '20px 50px', 
-                    '&:hover': {
-                        border: '1px solid white'
-                    }
-                }} 
             variant="outlined"
+            startIcon={<DownloadIcon />}
         >
-            <DownloadIcon 
-                sx={{
-                    marginRight: '10px'
-                }} 
-            />
-                Resume
+            Resume
         </Button>
+      
     );
 }

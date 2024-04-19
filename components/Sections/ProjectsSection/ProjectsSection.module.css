@@ -1,0 +1,12 @@
+.projectsContainer {
+  align-content: flex-end; 
+  align-items: flex-start; 
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  transition: opacity 1s;
+  z-index: 1;
+  padding: 150px 0; 
+}

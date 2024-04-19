@@ -1,0 +1,41 @@
+.visible {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+
+  .hidden {
+    opacity: 0; 
+    transition: opacity 1s;
+  }
+  .experienceContainer {
+    padding: 150px 0; 
+  }
+
+  .contentContainer {
+    display: flex; 
+    flex-direction: column; 
+    margin-bottom: 25px;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .companyLogo {
+    border-radius: 5px; 
+    margin: 10px; 
+    background-color: white;
+  }
+
+  .title {
+    display: flex; 
+    flex-direction: column;
+  }
+
+  .description {
+    margin: 10px;
+  }
+
+  .list {
+    margin: 25px;
+  }

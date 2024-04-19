@@ -1,0 +1,72 @@
+.modalBackDrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+}
+
+.closeIconContainer {
+    display: flex; 
+    justify-content: flex-end; 
+    margin: 75px 75px 0 0;
+}
+
+.closeIcon {
+    color: white; 
+    font-size: 35px; 
+}
+.closeIcon:hover { 
+    cursor: pointer; 
+}
+
+.outerModalContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 95vh;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 20px;
+}
+
+.innerModalContainer {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.player {
+    margin-bottom: 50px;
+}
+
+.projectContent {
+    overflow-y: scroll; 
+    height: 300px;  
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.header {
+    font-size: 30px; 
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.subHeader {
+    font-size: 20px; 
+    margin-bottom: 10px;
+}
+
+.technologies {
+    margin-bottom: 10px;
+}
