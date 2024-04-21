@@ -17,12 +17,13 @@
 }
 
 .contactForm {
-    padding: 150px 0;
+    height: 100vh;
+    padding: 150px 0 350px;
 }
 
 .message {
     text-align: center;
-    margin-bottom: 250px;
+    padding: 150px 0 350px;
 }
 
 .paragraph {
