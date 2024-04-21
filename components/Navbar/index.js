@@ -45,7 +45,7 @@ export default function Navbar() {
                 <List className={styles.navBarList}>
                     {tabs.map((text, index) => (
                         <ListItem key={index} disablePadding>
-                            <ListItemButton to={`#${text}`} className={styles.navBarListButton} disableRipple onClick={handleClick} selected={currentTab === text} variant="primary" >
+                            <ListItemButton to={`#${text}`} variant="primary" disableRipple onClick={handleClick} selected={currentTab === text}>
                                 <ListItemText primary={text} className={styles.navBarListItem} />
                             </ListItemButton>
                         </ListItem>

@@ -38,26 +38,7 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [projectIndex, setProjectIndex] = useState(0);
   const [scrolledPosition, setScrolledPosition] = useState(0);
-  const [scrollY, setScrollY] = useState(scrolledPosition);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const yCoords = [500, 800, 1300, 1400, 3000];
-
-      for(let i=0; i<yCoords.length; i++) {
-        const y = yCoords[i];
-       
-        if(window.scrollY >= y) {
-          setScrollY(y);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     if(!isOpen) {

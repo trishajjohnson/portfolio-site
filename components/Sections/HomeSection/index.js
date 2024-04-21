@@ -20,7 +20,7 @@ export default function HomeSection() {
                     </p>
                     <Box className={styles.iconsContainer}>
                         {home.socials.map((el, i) => (
-                            <Link key={i} target="_blank" href={el.url} className={styles.icons}>
+                            <Link key={i} target="_blank" href={el.url} variant="icons">
                                 {el.icon()}
                             </Link>
                         ))}

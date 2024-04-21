@@ -8,6 +8,9 @@ export const theme = createTheme({
             {
                 props: { variant: "primary" },
                 style: {
+                    borderRadius: '2px',
+                    borderTopRightRadius: '20px', 
+                    borderBottomLeftRadius: '20px', 
                     '&.Mui-selected': {
                         backgroundColor: 'rgba(255, 255, 255, .15)',
                         '&:hover': {
@@ -27,6 +30,27 @@ export const theme = createTheme({
                     border: '.5px solid rgba(255, 255, 255, .7)',
                     '&:hover': {
                         border: '1px solid white'
+                    }
+                }
+            },
+            {
+                props: { variant: "navtab" },
+                style: {
+                    color: "white"
+                }
+            }
+        ]
+    },
+    MuiLink: {
+        variants: [
+            {
+                props: { variant: "icons" },
+                style: {
+                    color: "white",
+                    marginRight: '10px', 
+                    opacity: 0.8,
+                    '&:hover': {
+                        opacity: 1
                     }
                 }
             }
